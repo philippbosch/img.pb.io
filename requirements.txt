@@ -1,0 +1,6 @@
+Django
+MySQL-python
+South
+PIL
+django-compressor
+BeautifulSoup
