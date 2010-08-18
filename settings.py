@@ -57,6 +57,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'compressor',
+    'easy_thumbnails',
+    
+    'imagehost',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -103,6 +106,12 @@ COMPILER_FORMATS = {
     }
 }
 COMPRESS_OUTPUT_DIR = 'compressed'
+
+# IMAGEHOST
+IMAGEHOST_UPLOAD_DIR_URL = MEDIA_URL + 'uploads/'
+IMAGEHOST_UPLOAD_DIR_PATH = os.path.join(MEDIA_ROOT, 'uploads')
+THUMBNAIL_DEBUG = True
+THUMBNAIL_EXTENSION = 'png'
 
 # LOCAL SETTINGS
 try:

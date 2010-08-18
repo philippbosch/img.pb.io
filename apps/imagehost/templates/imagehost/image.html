@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+    <img src="{% thumbnail image.file 640x640 %}" longdesc="{{ image.file.url }}" id="image" class="width-{{ image.file.width }} height-{{ image.file.height }}">
+{% endblock %}

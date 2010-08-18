@@ -4,3 +4,36 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
+
+$default-text-shadow-color: rgba(255,255,255,0.5);
+$default-text-shadow-h-offset: 0px;
+$default-text-shadow-v-offset: 1px;
+$default-text-shadow-blur: 0px;
+
+body {
+    background: #FFF url('../img/checkered.png') repeat;
+}
+
+#wrapper {
+    text-align: center;
+    margin: 48px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 32pt;
+    font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+    color: #72A8B0;
+    @include text-shadow();
+}
+
+#content {
+    margin: 32px 0;
+}
+
+#image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}

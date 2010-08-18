@@ -4,3 +4,4 @@ South
 PIL
 django-compressor
 BeautifulSoup
+easy-thumbnails
