@@ -19,6 +19,7 @@ body {
     padding-bottom: 1px;
     color: $text-color;
     font-size: 15px;
+    @include text-shadow();
 }
 
 a {
@@ -35,12 +36,10 @@ a {
 h1 {
     font-size: 32pt;
     color: #72A8B0;
-    @include text-shadow();
 }
 
 h2 {
     font-size: 24px;
-    @include text-shadow();
     margin-bottom: 12px;
 }
 

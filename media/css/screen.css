@@ -69,41 +69,40 @@ body {
   padding-bottom: 1px;
   color: #94958d;
   font-size: 15px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
 }
 
-/* line 24, ../src/screen.scss */
+/* line 25, ../src/screen.scss */
 a {
   color: #bd5678;
   text-decoration: none;
 }
 
-/* line 29, ../src/screen.scss */
+/* line 30, ../src/screen.scss */
 #wrapper {
   text-align: center;
   padding: 48px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 35, ../src/screen.scss */
+/* line 36, ../src/screen.scss */
 h1 {
   font-size: 32pt;
   color: #72A8B0;
-  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
 }
 
 /* line 41, ../src/screen.scss */
 h2 {
   font-size: 24px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
   margin-bottom: 12px;
 }
 
-/* line 47, ../src/screen.scss */
+/* line 46, ../src/screen.scss */
 #content {
   margin: 32px 0;
 }
 
-/* line 52, ../src/screen.scss */
+/* line 51, ../src/screen.scss */
 .image img {
   position: relative;
   display: block;
@@ -117,7 +116,7 @@ h2 {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-/* line 59, ../src/screen.scss */
+/* line 58, ../src/screen.scss */
 .image .scalable-note {
   -moz-transition-property: opacity;
   -webkit-transition-property: opacity;
@@ -137,7 +136,7 @@ h2 {
   transition-delay: 0.8s;
   opacity: 1;
 }
-/* line 64, ../src/screen.scss */
+/* line 63, ../src/screen.scss */
 .image.large .scalable-note {
   -moz-transition-delay: 0;
   -webkit-transition-delay: 0;
@@ -146,23 +145,23 @@ h2 {
   opacity: 0;
 }
 
-/* line 70, ../src/screen.scss */
+/* line 69, ../src/screen.scss */
 .scalable-note {
   font-size: 12px;
   color: #643F2D;
   margin: 16px 0;
 }
 
-/* line 76, ../src/screen.scss */
+/* line 75, ../src/screen.scss */
 .links {
   margin: 32px 0;
 }
-/* line 79, ../src/screen.scss */
+/* line 78, ../src/screen.scss */
 .links a:before {
   content: ' | ';
   color: #94958d;
 }
-/* line 84, ../src/screen.scss */
+/* line 83, ../src/screen.scss */
 .links a:first-child:before {
   content: '';
 }
