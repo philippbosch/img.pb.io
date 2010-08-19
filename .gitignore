@@ -9,3 +9,4 @@ settings_local.py
 searchindex
 *.tmproj
 .sass-cache
+*.sqlite3

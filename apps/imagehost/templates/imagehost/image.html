@@ -1,6 +1,35 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail i18n %}
 
 {% block content %}
-    <img src="{% thumbnail image.file 640x640 %}" longdesc="{{ image.file.url }}" id="image" class="width-{{ image.file.width }} height-{{ image.file.height }}">
+    {% thumbnail image.file 640x640 as small %}
+    <style type="text/css">
+        .image.small img {
+            width: {{ small.width }}px;
+            height: {{ small.height }}px;
+        }
+        .image.large img {
+            width: {{ image.file.width }}px;
+            height: {{ image.file.height }}px;
+        }
+    </style>
+    {% if image.title %}<h2>{{ image.title }}</h2>{% endif %}
+    <div class="image small{% if small.width < image.file.width %} scalable{% endif %}">
+        <img src="{{ small.url }}" longdesc="{{ image.file.url }}">
+        {% if small.width < image.file.width %}
+            <div class="scalable-note">{% blocktrans with image.file.width as large_width and image.file.height as large_height and small.width as small_width and small.height as small_height %}The original image is {{ large_width }}×{{ large_height }} and was scaled down to {{ small_width }}×{{ small_height }}. Please click on it to show the original size.{% endblocktrans %}</div>
+        {% endif %}
+    </div>
+    
+    <div class="links">
+        <a href="{% url imagehost_download_image image.slug %}">Download ({{ image.file.size|filesizeformat }})</a>
+    </div>
+    
+    {% if perms.imagehost.change_image %}
+        <div class="links admin">
+            <a href="{% url admin:imagehost_image_change image.id %}">{% trans "Edit" %}</a>
+            <a href="{% url admin:imagehost_image_delete image.id %}">{% trans "Delete" %}</a>
+        </div>
+    {% endif %}
+    
 {% endblock %}
