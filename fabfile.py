@@ -2,7 +2,7 @@ import os.path
 from fabric.api import *
 
 env.project_name = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
-env.user_name = env.project_name
+env.user_name = 'pb'
 
 # ------ environments ----------    
 def staging():
