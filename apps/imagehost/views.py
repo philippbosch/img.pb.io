@@ -12,7 +12,7 @@ from imagehost.conf import settings as imagehost_settings
 from imagehost.models import Image
 
 def show_image(request, slug):
-    image_path = os.path.join(imagehost_settings.UPLOAD_DIR_PATH, "%s.png" % slug)
+    image_path = os.path.join(settings.MEDIA_ROOT, imagehost_settings.UPLOAD_DIR_PATH, "%s.png" % slug)
     if not os.path.exists(image_path):
         raise Http404, u"%s" % _("The requested image does not exist")
     image, created = Image.objects.get_or_create(slug=slug)
