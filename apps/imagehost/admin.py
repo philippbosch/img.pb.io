@@ -15,7 +15,6 @@ class ImageAdmin(admin.ModelAdmin):
         opts = {
             'size': (160,160),
         }
-        print dir(self)
         return u'<img src="%s">' % get_thumbnailer(instance.file).get_thumbnail(opts).url
     thumbnail_tag.allow_tags = True
     thumbnail_tag.short_description = _("preview")
