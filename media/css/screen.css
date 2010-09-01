@@ -1,108 +1,33 @@
-/* line 14, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-/* line 17, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 3, ../src/screen.scss */
 body {
-  line-height: 1;
-  color: black;
-  background: white;
+  background: white url("http://pb.io/media/img/concrete.png");
 }
 
-/* line 19, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 21, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-
-/* line 23, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 25, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: "" "";
-}
-/* line 96, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-}
-
-/* line 27, ../../../../../../opt/local/lib/ruby/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 13, ../src/screen.scss */
-body, html {
-  height: 100%;
-}
-
-/* line 17, ../src/screen.scss */
-body {
-  background: white url("../img/checkered.png") repeat;
-  padding-bottom: 1px;
-  color: #94958d;
-  font-size: 15px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
-}
-
-/* line 25, ../src/screen.scss */
-a {
-  color: #bd5678;
-  text-decoration: none;
-}
-
-/* line 30, ../src/screen.scss */
-#wrapper {
-  text-align: center;
+/* line 7, ../src/screen.scss */
+#main {
   padding: 48px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
-/* line 36, ../src/screen.scss */
+/* line 12, ../src/screen.scss */
 h1 {
-  font-size: 32pt;
-  color: #72A8B0;
+  margin-bottom: 16px;
 }
 
-/* line 41, ../src/screen.scss */
-h2 {
-  font-size: 24px;
-  margin-bottom: 12px;
+/* line 16, ../src/screen.scss */
+.image {
+  margin: 0 auto;
+  position: relative;
+  -moz-transition-property: width;
+  -webkit-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
 }
-
-/* line 46, ../src/screen.scss */
-#content {
-  margin: 32px 0;
-}
-
-/* line 51, ../src/screen.scss */
+/* line 21, ../src/screen.scss */
 .image img {
   position: relative;
   display: block;
@@ -115,53 +40,142 @@ h2 {
   -webkit-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0;
 }
-/* line 58, ../src/screen.scss */
+/* line 29, ../src/screen.scss */
 .image .scalable-note {
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+/* line 33, ../src/screen.scss */
+.image.large .scalable-note {
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+
+/* line 38, ../src/screen.scss */
+.scalable-note {
+  font-size: 12px;
+  margin: 16px 0;
+}
+
+/* line 43, ../src/screen.scss */
+.links {
+  background: #000;
+  background: rgba(0, 0, 0, 0.6);
+  width: 200px;
+  height: 60px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 0 5px 0;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 0 5px 0;
+  -o-box-shadow: rgba(255, 255, 255, 0.3) 0 0 5px 0;
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 5px 0;
+  margin: 0 auto;
+  padding: 10px;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   -moz-transition-property: opacity;
   -webkit-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
-  -moz-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
-  -moz-transition-timing-function: ease;
-  -webkit-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -moz-transition-delay: 0.8s;
-  -webkit-transition-delay: 0.8s;
-  -o-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-  opacity: 1;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -110px;
 }
-/* line 63, ../src/screen.scss */
-.image.large .scalable-note {
-  -moz-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  -o-transition-delay: 0;
-  transition-delay: 0;
-  opacity: 0;
+/* line 59, ../src/screen.scss */
+.links.admin {
+  width: 340px;
+  margin-left: -180px;
 }
-
-/* line 69, ../src/screen.scss */
-.scalable-note {
-  font-size: 12px;
-  color: #643F2D;
-  margin: 16px 0;
+/* line 64, ../src/screen.scss */
+.links a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  float: left;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  opacity: 0.3;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  -moz-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
-
 /* line 75, ../src/screen.scss */
-.links {
-  margin: 32px 0;
+.links a:first-child {
+  margin-left: 0;
 }
-/* line 78, ../src/screen.scss */
-.links a:before {
-  content: ' | ';
-  color: #94958d;
+/* line 79, ../src/screen.scss */
+.links a:hover, .links a.hover {
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
 }
 /* line 83, ../src/screen.scss */
-.links a:first-child:before {
-  content: '';
+.links a span {
+  display: none;
+}
+/* line 88, ../src/screen.scss */
+.links .zoom.in {
+  background-image: url("../img/icon-zoom-in.png");
+}
+/* line 91, ../src/screen.scss */
+.links .zoom.out {
+  background-image: url("../img/icon-zoom-out.png");
+}
+/* line 94, ../src/screen.scss */
+.links .download {
+  background-image: url("../img/icon-download.png");
+}
+/* line 97, ../src/screen.scss */
+.links .copy {
+  background-image: url("../img/icon-copy.png");
+}
+/* line 100, ../src/screen.scss */
+.links .edit {
+  background-image: url("../img/icon-edit.png");
+}
+/* line 103, ../src/screen.scss */
+.links .delete {
+  background-image: url("../img/icon-delete.png");
+}
+/* line 107, ../src/screen.scss */
+.links .title {
+  clear: both;
+  position: relative;
+  top: 20px;
+  font-weight: 700;
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+}
+
+/* line 119, ../src/screen.scss */
+.image:hover .links, .image.hover .links {
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }

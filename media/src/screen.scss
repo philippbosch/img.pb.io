@@ -1,86 +1,122 @@
-@import "compass/reset";
 @import "compass/css3";
 
-$default-text-shadow-color: rgba(255,255,255,0.5);
-$default-text-shadow-h-offset: 0px;
-$default-text-shadow-v-offset: 1px;
-$default-text-shadow-blur: 0px;
-
-$text-color: #94958d;
-$link-color: #BD5678;
-
-
-body, html {
-    height: 100%;
-}
-
 body {
-    background: #FFF url('../img/checkered.png') repeat;
-    padding-bottom: 1px;
-    color: $text-color;
-    font-size: 15px;
-    @include text-shadow();
+    background: #FFF url('http://pb.io/media/img/concrete.png');
 }
 
-a {
-    color: $link-color;
-    text-decoration: none;
-}
-
-#wrapper {
-    text-align: center;
+#main {
     padding: 48px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
 }
 
 h1 {
-    font-size: 32pt;
-    color: #72A8B0;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-#content {
-    margin: 32px 0;
+    margin-bottom: 16px;
 }
 
 .image {
+    margin: 0 auto;
+    position: relative;
+    @include transition('width', 1s);
+    
     img {
         position: relative;
         display: block;
         margin: 0 auto;
         @include transition('width,height', 1s);
+        @include box-shadow(rgba(0,0,0,0.3), 0, 0, 4px);
     }
     
     .scalable-note {
-        @include transition('opacity', 1s, 'ease', 0.8s);
-        opacity: 1;
+        @include opacity(1);
     }
     
     &.large .scalable-note {
-        @include transition-delay(0);
-        opacity: 0;
+        @include opacity(0);
     }
 }
 
 .scalable-note {
     font-size: 12px;
-    color: #643F2D;
     margin: 16px 0;
 }
 
 .links {
-    margin: 32px 0;
+    background: #000;
+    background: rgba(0,0,0,0.6);
+    width: 200px;
+    height: 60px;
+    @include border-radius(10px);
+    @include box-shadow(rgba(255,255,255,0.3), 0, 0, 5px);
+    margin: 0 auto;
+    padding: 10px;
+    @include opacity(0);
+    @include transition('opacity', .5s);
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -110px;
     
-    a:before {
-        content: ' | ';
-        color: $text-color;
+    &.admin {
+        width: 340px;
+        margin-left: -180px;
     }
     
-    a:first-child:before {
-        content: '';
+    a {
+        display: block;
+        width: 60px;
+        height: 60px;
+        float: left;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: 10px;
+        @include opacity(0.3);
+        @include transition('opacity', 0.5s);
+        
+        &:first-child {
+            margin-left: 0
+        }
+        
+        &:hover, &.hover {
+            @include opacity(0.9);
+        }
+        
+        span {
+            display: none;
+        }
+    }
+    
+    .zoom.in {
+        background-image: url('../img/icon-zoom-in.png');
+    }
+    .zoom.out {
+        background-image: url('../img/icon-zoom-out.png');
+    }
+    .download {
+        background-image: url('../img/icon-download.png');
+    }
+    .copy {
+        background-image: url('../img/icon-copy.png');
+    }
+    .edit {
+        background-image: url('../img/icon-edit.png');
+    }
+    .delete {
+        background-image: url('../img/icon-delete.png');
+    }
+    
+    .title {
+        clear: both;
+        position: relative;
+        top: 20px;
+        font-weight: 700;
+        color: #FFF;
+        color: rgba(255,255,255,.9);
+        @include text-shadow(rgba(0,0,0,0.5), 1px, 1px, 2px);
+    }
+}
+
+.image:hover, .image.hover {
+    .links {
+        @include opacity(1);
     }
 }
