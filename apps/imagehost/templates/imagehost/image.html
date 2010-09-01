@@ -28,7 +28,7 @@
         <div class="links{% if perms.imagehost.change_image %} admin{% endif %}">
             <a href="#" class="zoom in"><span>{% trans "Zoom" %}</span></a>
             <a href="{% url imagehost_download_image image.slug %}" class="download"><span>{% trans "Download" %} ({{ image.file.size|filesizeformat }})</span></a>
-            <a href="http://{{ request.META.HTTP_HOST }}{{ image.get_absolute_url }}" class="copy"><span>{% trans "Copy URL" %}</span></a>
+            <div id="copy-container"><a href="http://{{ request.META.HTTP_HOST }}{{ image.get_absolute_url }}" class="copy"><span>{% trans "Copy URL" %}</span></a></div>
             {% if perms.imagehost.change_image %}
             <a href="{% url admin:imagehost_image_change image.id %}" class="edit"><span>{% trans "Edit" %}</span></a>
             <a href="{% url admin:imagehost_image_delete image.id %}" class="delete"><span>{% trans "Delete" %}</span></a>
@@ -36,4 +36,19 @@
         </div>
     </div>
     <div class="creation-date">{{ image.created_on|date:"F j, Y – H:i" }}</div>
+    
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_identifier = {{ image.id }};
+        if (settings.DEBUG) var disqus_developer = 1;
+        (function() {
+            var dsq = document.createElement('script'); 
+            dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://pb-img.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+    
 {% endblock %}

@@ -30,7 +30,7 @@ $(document).ready(function() {
     ZeroClipboard.setMoviePath(settings.MEDIA_URL + 'js/lib/zeroclipboard/ZeroClipboard10.swf');
     var clip = new ZeroClipboard.Client();
     clip.setText($('.links a.copy').attr('href'));
-    clip.glue($('.links a.copy').get(0));
+    clip.glue($('.links a.copy').get(0), 'copy-container');
     clip.addEventListener('onMouseOver', function() {
         $('.image').addClass('hover');
         $('a.copy').trigger('mouseover');
