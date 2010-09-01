@@ -28,13 +28,12 @@
         <div class="links{% if perms.imagehost.change_image %} admin{% endif %}">
             <a href="#" class="zoom in"><span>{% trans "Zoom" %}</span></a>
             <a href="{% url imagehost_download_image image.slug %}" class="download"><span>{% trans "Download" %} ({{ image.file.size|filesizeformat }})</span></a>
-            <a href="#" class="copy"><span>{% trans "Copy URL" %}</span></a>
+            <a href="http://{{ request.META.HTTP_HOST }}{{ image.get_absolute_url }}" class="copy"><span>{% trans "Copy URL" %}</span></a>
             {% if perms.imagehost.change_image %}
             <a href="{% url admin:imagehost_image_change image.id %}" class="edit"><span>{% trans "Edit" %}</span></a>
             <a href="{% url admin:imagehost_image_delete image.id %}" class="delete"><span>{% trans "Delete" %}</span></a>
             {% endif %}
         </div>
-        
     </div>
-
+    <div class="creation-date">{{ image.created_on|date:"F j, Y – H:i" }}</div>
 {% endblock %}

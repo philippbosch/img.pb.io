@@ -179,3 +179,9 @@ h1 {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
+
+/* line 124, ../src/screen.scss */
+.creation-date {
+  margin: 1em 0;
+  font-size: 80%;
+}

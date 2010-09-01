@@ -29,7 +29,7 @@ $(document).ready(function() {
     
     ZeroClipboard.setMoviePath(settings.MEDIA_URL + 'js/lib/zeroclipboard/ZeroClipboard10.swf');
     var clip = new ZeroClipboard.Client();
-    clip.setText('lorem ipsum FTW!');
+    clip.setText($('.links a.copy').attr('href'));
     clip.glue($('.links a.copy').get(0));
     clip.addEventListener('onMouseOver', function() {
         $('.image').addClass('hover');
@@ -38,5 +38,8 @@ $(document).ready(function() {
     clip.addEventListener('onMouseOut', function() {
         $('.image').removeClass('hover');
         $('a.copy').trigger('mouseout');
+    });
+    clip.addEventListener('onComplete', function() {
+        $('.links .title').text('URL copied to clipboard!');
     });
 });

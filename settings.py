@@ -34,9 +34,9 @@ DATABASES = {
 
 # I18N/L10N
 TIME_ZONE = 'Europe/Berlin'
-LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'en'
 LANGUAGES = (
-    ('de', 'Deutsch'),
+    ('en', 'English'),
 )
 USE_I18N = True
 USE_L10N = True

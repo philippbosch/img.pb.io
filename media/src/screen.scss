@@ -120,3 +120,8 @@ h1 {
         @include opacity(1);
     }
 }
+
+.creation-date {
+    margin: 1em 0;
+    font-size: 80%;
+}
