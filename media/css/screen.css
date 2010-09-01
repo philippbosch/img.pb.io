@@ -222,3 +222,8 @@ h1 {
   float: left;
   margin-left: 10px;
 }
+
+/* line 160, ../src/screen.scss */
+pre {
+  margin-left: 32px;
+}

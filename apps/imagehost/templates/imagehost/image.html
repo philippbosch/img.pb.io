@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load thumbnail i18n markup %}
 
+{% block page_title %}{% if image.title %}{{ image.title }} – {% endif %}{{ block.super }}{% endblock %}
+
 {% block content %}
     {% thumbnail image.file 640x640 as small %}
     <style type="text/css">
