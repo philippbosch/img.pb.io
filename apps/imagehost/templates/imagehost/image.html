@@ -22,11 +22,8 @@
     {% if image.title %}<h1>{{ image.title }}</h1>{% endif %}
     <div class="image small{% if small.width < image.file.width %} scalable{% endif %}">
         <img src="{{ small.url }}" longdesc="{{ image.file.url }}">
-        {% if small.width < image.file.width %}
-            {# <div class="scalable-note">{% blocktrans with image.file.width as large_width and image.file.height as large_height and small.width as small_width and small.height as small_height %}The original image is {{ large_width }}×{{ large_height }} and was scaled down to {{ small_width }}×{{ small_height }}. Please click on it to show the original size.{% endblocktrans %}</div> #}
-        {% endif %}
-        <div class="links{% if perms.imagehost.change_image %} admin{% endif %}">
-            <a href="#" class="zoom in"><span>{% trans "Zoom" %}</span></a>
+        <div class="links{% if perms.imagehost.change_image %} admin{% endif %}{% if small.width < image.file.width %} zoomable{% endif %}">
+            {% if small.width < image.file.width %}<a href="#" class="zoom in"><span>{% trans "Zoom" %}</span></a>{% endif %}
             <a href="{% url imagehost_download_image image.slug %}" class="download"><span>{% trans "Download" %} ({{ image.file.size|filesizeformat }})</span></a>
             <div id="copy-container"><a href="http://{{ request.META.HTTP_HOST }}{{ image.get_absolute_url }}" class="copy"><span>{% trans "Copy URL" %}</span></a></div>
             {% if perms.imagehost.change_image %}

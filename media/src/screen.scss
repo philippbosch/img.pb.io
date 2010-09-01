@@ -43,7 +43,6 @@ h1 {
 .links {
     background: #000;
     background: rgba(0,0,0,0.6);
-    width: 200px;
     height: 60px;
     @include border-radius(10px);
     @include box-shadow(rgba(255,255,255,0.3), 0, 0, 5px);
@@ -54,9 +53,20 @@ h1 {
     position: absolute;
     bottom: 50px;
     left: 50%;
-    margin-left: -110px;
+    width: 130px;
+    margin-left: -75px;
+    
+    &.zoomable {
+        width: 200px;
+        margin-left: -110px;
+    }
     
     &.admin {
+        width: 270px;
+        margin-left: -145px;
+    }
+    
+    &.admin.zoomable {
         width: 340px;
         margin-left: -180px;
     }
@@ -133,4 +143,6 @@ h1 {
 
 #copy-container {
     position: relative;
+    float: left;
+    margin-left: 10px;
 }
