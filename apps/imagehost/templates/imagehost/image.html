@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail i18n %}
+{% load thumbnail i18n markup %}
 
 {% block content %}
     {% thumbnail image.file 640x640 as small %}
@@ -20,7 +20,7 @@
         }
     </style>
     {% if image.title %}<h1>{{ image.title }}</h1>{% endif %}
-    <div class="image small{% if small.width < image.file.width %} scalable{% endif %}">
+    <div class="image small{% if small.width < image.file.width %} scalable{% endif %}{% if not image.border %} no-border{% endif %}">
         <img src="{{ small.url }}" longdesc="{{ image.file.url }}">
         <div class="links{% if perms.imagehost.change_image %} admin{% endif %}{% if small.width < image.file.width %} zoomable{% endif %}">
             {% if small.width < image.file.width %}<a href="#" class="zoom in"><span>{% trans "Zoom" %}</span></a>{% endif %}
@@ -34,6 +34,7 @@
     </div>
     <div class="creation-date">{{ image.created_on|date:"F j, Y – H:i" }}</div>
     
+    {% if image.text %}<div class="text">{{ image.text|markdown }}</div>{% endif %}
     
     <div id="disqus_thread"></div>
     <script type="text/javascript">

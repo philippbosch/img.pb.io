@@ -11,6 +11,8 @@ class Image(models.Model):
     slug = models.SlugField(verbose_name=_("slug"), max_length=100, unique=True)
     file = models.ImageField(verbose_name=_("file"), upload_to=lambda instance, filename: os.path.join(imagehost_settings.UPLOAD_DIR_PATH, "%s.png" % instance.slug))
     title = models.CharField(verbose_name=_("title"), max_length=100, blank=True)
+    text = models.TextField(verbose_name=_("text"), blank=True)
+    border = models.BooleanField(verbose_name=_("border"), default=True)
     created_on = models.DateTimeField(verbose_name=_("created on"), auto_now_add=True)
     updated_on = models.DateTimeField(verbose_name=_("updated on"), auto_now=True, db_index=True)
     
@@ -53,5 +55,3 @@ class Image(models.Model):
             self.file.save(filename, self.file, save=False)
             os.unlink(old_file_path)
         super(Image, self).save(force_insert, force_update, using)
-
-        
